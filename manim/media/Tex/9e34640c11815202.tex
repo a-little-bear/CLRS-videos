@@ -1,0 +1,56 @@
+\documentclass[preview]{standalone}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{setspace}
+\usepackage{tipa}
+\usepackage{relsize}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+\usepackage{calligra}
+\usepackage{wasysym}
+\usepackage{ragged2e}
+\usepackage{physics}
+\usepackage{xcolor}
+\usepackage{microtype}
+\DisableLigatures{encoding = *, family = * }
+\linespread{1}
+
+\begin{document}
+
+\begin{center}
+BFS(G, s)
+
+for each vertex u $\in$ G.V - \{s\}
+
+    u.color = WHITe
+
+    u.d = $\infty$
+
+    u.$\pi$ = NIL
+
+s.color = GRAY
+
+s.d = 0
+
+s.$\pi$ = NIL
+
+Q = $\emptyset$
+ENQUEUE(Q, s)
+while Q $\neq$ $\emptyset$
+    u = DEQUEUE(Q)
+    for each v $\in$ G.Adj[u]
+        if v.color == WHITE
+            v.color = GRAY
+            v.d = u.d + 1
+            v.$\pi$ = u
+            ENQUEUE(Q, v)
+    u.color = BLACK
+\end{center}
+
+\end{document}
